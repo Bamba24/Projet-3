@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./src/assets/icons/budget-logo.svg" type="image/x-icon">
+  <!-- cdn font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- style.css -->
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>Application de gestion de budget</title>
+  <script type="module" src="./src/js/depense.mjs"></script>
+  <script type="module" src="./src/js/revenu.mjs"></script>
+  <script type="module" src="./src/js/solde.mjs"></script>
+</head>
+<body>
+  <main>
+    <!-- section budget -->
+    <section class="section_budget">
+      <!-- logo du budget -->
+      <div class="budget_logo">
+        <i class="fa-solid fa-cash-register"></i>
+        <h3>Gestion du budget</h3>
+      </div>
+    </section>
+
+    <!-- container des sections -->
+    <div class="container_sections">
+        <!-- details budget -->
+         <section class="section_budget">
+           <div class="details_budget">
+             <div class="budget_total">
+               <div class="container_total">
+                 <h4>Total budget</h4>
+               </div>
+               <p><span id="total_budget">0 </span>Fcfa</p>
+             </div>
+             <div class="budget_expense">
+               <div class="container_expense">
+                 <h4>Total dépense</h4>
+               </div>
+               <p><span id="total_expense">0 </span> Fcfa</p>
+             </div>
+             <div class="budget_balance">
+               <div class="container_balance">
+                 <h4>Solde</h4>
+               </div>
+               <p><span id="total_balance">0 </span> Fcfa</p>
+             </div>
+           </div>
+         </section>
+
+    <!-- section depenses -->
+      <section class="section_depenses">
+        <h2>Listes des depenses</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Montant</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody_depense">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>AJOUTER DEPENSE <i id="ajoutDepense" class="fa-solid fa-square-plus"></i>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <!-- section revenus -->
+      <section class="section_revenus">
+        <h2>Listes des revenus</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Montant</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody_revenus">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>AJOUTER REVENUS <i id="ajoutRevenu" class="fa-solid fa-square-plus"></i>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </div>
+
+    <!-- section formulaire revenu -->
+      <section class="section_formulaire_revenus hide">
+        <h2>Ajouter un revenu</h2>
+        <form action="" id="form_revenus">
+          <div class="form_group">
+            <label for="titre">Titre</label>
+            <input type="text" id="titre_revenu" name="titre" placeholder="Titre du revenu">
+          </div>
+          <div class="form_group">
+            <label for="montant">Montant</label>
+            <input type="number" id="montant" name="montant" placeholder="Montant du revenu" step="1000">
+          </div>
+          <button class="btn_valider" type="submit">Valider</button>
+        </form>
+      </section>
+
+      <!-- section formulaire depense -->
+      <section class="section_formulaire_depenses hide">
+        <h2>Ajouter une depense</h2>
+        <form action="" id="form_depense">
+          <div class="form_group">
+            <label for="titre">Titre</label>
+            <input type="text" id="titre_depense" name="titre" placeholder="Titre de la depense">
+          </div>
+          <div class="form_group">
+            <label for="montant">Montant</label>
+            <input type="number" id="montant_depense" name="montant" placeholder="Montant de la depense" step="1000">
+          </div>
+          <button class="btn_valider" type="submit">Valider</button>
+        </form>
+      </section>
+
+      <div class="popup_message">
+        <div class="popup_content">
+          <p>La depense a été ajoutée avec succès</p>
+        </div>
+      </div>
+  </main>
+</body>
+</html>
